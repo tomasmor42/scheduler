@@ -27,10 +27,7 @@ def login():
         user = User.query.get(form.email.data)
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
-                user.authenticated = True
                 session["email"] = form.email.data
-                db.session.add(user)
-                db.session.commit()
                 return redirect("/")
     return render_template("login.html", form=form)
 
