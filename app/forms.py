@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired
 
 class EventForm(FlaskForm):
     _id = HiddenField('_id')
-    author = StringField('author', validators=[DataRequired()])
+    author = StringField('author')
     start = DateTimeLocalField('start', format='%Y-%m-%d %H:%M', validators=[DataRequired()])
     end = DateTimeLocalField('end', format='%Y-%m-%d %H:%M', validators=[DataRequired()])
     subject = StringField('subject', validators=[DataRequired()])

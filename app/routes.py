@@ -41,7 +41,7 @@ def create_user():
         db.session.add(user)
         db.session.commit()
         return redirect("/")
-    return render_template("login.html", form=form)
+    return render_template("create.html", form=form)
 
 
 
