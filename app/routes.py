@@ -17,7 +17,6 @@ def login_required(func):
         if "email" not in session:
             return redirect(url_for("login", next=request.url))
         return func(*args, **kwargs)
-
     return secure_function
 
 @app.route("/login", methods=["GET", "POST"])
